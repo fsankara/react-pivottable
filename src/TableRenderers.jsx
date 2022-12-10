@@ -170,7 +170,7 @@ function makeRenderer(opts = {}) {
                         colAttrs.length + (rowAttrs.length === 0 ? 0 : 1)
                       }
                     >
-                      Totals
+                      Toplam
                     </th>
                   )}
                 </tr>
@@ -257,7 +257,7 @@ function makeRenderer(opts = {}) {
                 className="pvtTotalLabel"
                 colSpan={rowAttrs.length + (colAttrs.length === 0 ? 0 : 1)}
               >
-                Totals
+                Toplam
               </th>
 
               {colKeys.map(function(colKey, i) {
@@ -347,7 +347,7 @@ TSVExportRenderer.propTypes = PivotData.propTypes;
 
 export default {
   Table: makeRenderer(),
-  'Table Heatmap': makeRenderer({heatmapMode: 'full'}),
+  'Tablo Isı Haritası': makeRenderer({heatmapMode: 'full'}),
   'Table Col Heatmap': makeRenderer({heatmapMode: 'col'}),
   'Table Row Heatmap': makeRenderer({heatmapMode: 'row'}),
   'Exportable TSV': TSVExportRenderer,

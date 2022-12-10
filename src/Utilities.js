@@ -166,12 +166,18 @@ const getSort = function(sorters, attr) {
 };
 
 // aggregator templates default to US number formatting but this is overrideable
-const usFmt = numberFormat();
-const usFmtInt = numberFormat({digitsAfterDecimal: 0});
+const usFmt = numberFormat({thousandsSep: '.', decimalSep: ','});
+const usFmtInt = numberFormat({
+  digitsAfterDecimal: 0,
+  thousandsSep: '.',
+  decimalSep: ',',
+});
 const usFmtPct = numberFormat({
-  digitsAfterDecimal: 1,
+  digitsAfterDecimal: 2,
   scaler: 100,
   suffix: '%',
+  thousandsSep: '.',
+  decimalSep: ',',
 });
 
 const aggregatorTemplates = {
@@ -420,12 +426,12 @@ aggregatorTemplates.stdev = (ddof, f) =>
 
 // default aggregators & renderers use US naming and number formatting
 const aggregators = (tpl => ({
-  Count: tpl.count(usFmtInt),
-  'Count Unique Values': tpl.countUnique(usFmtInt),
-  'List Unique Values': tpl.listUnique(', '),
-  Sum: tpl.sum(usFmt),
-  'Integer Sum': tpl.sum(usFmtInt),
-  Average: tpl.average(usFmt),
+  Sayı: tpl.count(usFmtInt),
+  'Benzersiz değerler sayısı': tpl.countUnique(usFmtInt),
+  'Benzersiz değerler listesi': tpl.listUnique(', '),
+  Toplam: tpl.sum(usFmt),
+  'Toplam (tam sayı)': tpl.sum(usFmtInt),
+  Ortalama: tpl.average(usFmt),
   Median: tpl.median(usFmt),
   'Sample Variance': tpl.var(1, usFmt),
   'Sample Standard Deviation': tpl.stdev(1, usFmt),
@@ -449,13 +455,13 @@ const locales = {
       renderError: 'An error occurred rendering the PivotTable results.',
       computeError: 'An error occurred computing the PivotTable results.',
       uiRenderError: 'An error occurred rendering the PivotTable UI.',
-      selectAll: 'Select All',
+      selectAll: 'Hepsini Seç',
       selectNone: 'Select None',
       tooMany: '(too many to list)',
       filterResults: 'Filter values',
       apply: 'Apply',
       cancel: 'Cancel',
-      totals: 'Totals',
+      totals: 'Toplam',
       vs: 'vs',
       by: 'by',
     },

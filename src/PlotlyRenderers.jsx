@@ -199,17 +199,17 @@ function makeScatterRenderer(PlotlyComponent) {
 
 export default function createPlotlyRenderers(PlotlyComponent) {
   return {
-    'Grouped Column Chart': makeRenderer(
+    'Gruplandırılmış Sütun Grafiği': makeRenderer(
       PlotlyComponent,
       {type: 'bar'},
       {barmode: 'group'}
     ),
-    'Stacked Column Chart': makeRenderer(
+    'Yığılmış Sütün Grafiği': makeRenderer(
       PlotlyComponent,
       {type: 'bar'},
       {barmode: 'relative'}
     ),
-    'Grouped Bar Chart': makeRenderer(
+    'Gruplandırılmış Çubuk Grafik': makeRenderer(
       PlotlyComponent,
       {type: 'bar', orientation: 'h'},
       {barmode: 'group'},

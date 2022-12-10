@@ -1,5 +1,5 @@
 .pvtUi {
-    color: #2a3f5f;
+    color: #2a355f;
     font-family: Verdana;
     border-collapse: collapse;
 }
@@ -92,7 +92,7 @@ table.pvtTable tbody tr td {
 
 .pvtDropdownIcon {
     float: right;
-    color: #a2b1c6;
+    color: #0e6bec;
 }
 .pvtDropdownCurrent {
     text-align: left;
@@ -211,7 +211,7 @@ table.pvtTable tbody tr td {
 }
 
 .pvtButton {
-    color: #506784;
+    color: #0e75f3;
     border-radius: 5px;
     padding: 3px 6px;
     background: #f2f5fa;
